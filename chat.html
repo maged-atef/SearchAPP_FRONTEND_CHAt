@@ -47,7 +47,7 @@
   <script src="./JS Files/bootstrap.min.js"></script>
   <script src="./node_modules/socket.io-client/dist/socket.io.min.js"></script>
   <script>
-    const socket = io("https://search-app-backend-opal.vercel.app", {
+    const socket = io("https://search-app-backend-opal.vercel.app/index.js", {
       auth: { token: localStorage.getItem("token") },
       // info: {name:"migo", age:24}
     });
