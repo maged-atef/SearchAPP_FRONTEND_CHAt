@@ -47,7 +47,7 @@
           if (json.success) {
             localStorage.setItem("token", json.Acesstoken);
             localStorage.setItem("username", json.username);
-            window.location.href = "chat.html";
+            window.location.href = "./chat.html";
           } else {
             alert("Login failed");
           }
