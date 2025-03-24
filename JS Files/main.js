@@ -121,6 +121,14 @@ iconlogout.addEventListener("click", () => {
   window.location.href = "../index.html";
 });
 
+function logout(){
+    const usertoken = localStorage.getItem("token");
+    // emit event "disconnect"
+    socket.disconnect(); // disconnect socket from backend
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    window.location.href = "../index.html";
+}
 btnonline.addEventListener("click", () => {
   console.log('show hide btn')
   if (sidebar.classList.contains('hide')) {
