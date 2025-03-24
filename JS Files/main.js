@@ -28,7 +28,7 @@ let token = localStorage.getItem("token");
 // socket.connect();
 
 if (!user) {
-  window.location.href = "/index.html";
+  window.location.href = "../chat.html";
 } else {
   usernameDisplay.textContent = user;
 }
@@ -102,13 +102,14 @@ socket.on("private-message", ({ message, from }) => {
 });
 
 // * set local storage 
-logoutButton.addEventListener("click", () => {
+document.getElementById('logoutButton').addEventListener("click", () => {
   const usertoken = localStorage.getItem("token");
   // emit event "disconnect"
   socket.disconnect(); // disconnect socket from backend
   localStorage.removeItem("token");
   localStorage.removeItem("username");
-  window.location.href = "/index.html";
+  console.log('redirect to index ')
+  window.location.href = "../index.html";
 });
 
 iconlogout.addEventListener("click", () => {
@@ -117,7 +118,7 @@ iconlogout.addEventListener("click", () => {
   socket.disconnect(); // disconnect socket from backend
   localStorage.removeItem("token");
   localStorage.removeItem("username");
-  window.location.href = "/index.html";
+  window.location.href = "../index.html";
 });
 
 btnonline.addEventListener("click", () => {
